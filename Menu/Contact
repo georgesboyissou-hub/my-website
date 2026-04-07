@@ -1,0 +1,321 @@
+/* RAPPEL DU STYLE GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header.site-header {
+    text-align: center;
+    background: orange;
+    color: white;
+    padding: 25px 20px;
+}
+
+header.site-header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+header.site-header p {
+    font-size: 16px;
+}
+
+
+/* Zone principale de la page */
+.page-contact {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Titre et sous-titre d'introduction */
+.contact-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-intro h2 {
+    font-size: 28px;
+    color: #222;
+    margin-bottom: 8px;
+    border-bottom: 3px solid orange;
+    display: inline-block;
+    padding-bottom: 6px;
+}
+
+.contact-intro p {
+    color: #555;
+    font-size: 16px;
+}
+
+/* Disposition côte à côte : infos à gauche, formulaire à droite */
+.contact-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap; /* passe en colonne sur mobile */
+}
+
+/*BLOC INFOS PRATIQUES*/
+
+.infos-bloc {
+    flex: 1;
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Chaque ligne d'info (icône + texte) */
+.info-carte {
+    background: white;
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    /* Bordure gauche orange pour rappeler la couleur principale */
+    border-left: 4px solid orange;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.info-carte:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+}
+
+/* Icône de chaque carte info */
+.info-icone {
+    font-size: 22px;
+    line-height: 1;
+    padding-top: 2px;
+}
+
+/* Titre de la carte (Téléphone, Adresse...) */
+.info-texte h3 {
+    font-size: 15px;
+    color: #222;
+    margin-bottom: 4px;
+}
+
+/* Valeur de la carte */
+.info-texte p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+}
+
+/* ---- FORMULAIRE DE CONTACT ---- */
+
+.formulaire-bloc {
+    flex: 2;
+    min-width: 280px;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.formulaire-bloc h3 {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 24px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+/* Chaque groupe label + champ */
+.champ {
+    margin-bottom: 18px;
+}
+
+.champ label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+/* Styles partagés pour input, select et textarea */
+.champ input,
+.champ select,
+.champ textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: #fafafa;
+    transition: border-color 0.25s ease, background 0.25s ease;
+    outline: none;
+}
+
+/* Focus : la bordure passe orange pour rester dans la charte */
+.champ input:focus,
+.champ select:focus,
+.champ textarea:focus {
+    border-color: orange;
+    background: white;
+}
+
+.champ textarea {
+    resize: vertical; /* l'utilisateur peut redimensionner verticalement seulement */
+}
+
+/* Bouton d'envoi */
+.btn-envoyer {
+    width: 100%;
+    background: orange;
+    color: white;
+    border: none;
+    padding: 13px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 6px;
+}
+
+.btn-envoyer:hover {
+    background: #cc6600; /* un orange plus foncé, plus élégant que passer au rouge */
+    transform: translateY(-2px);
+}
+
+.btn-envoyer:active {
+    transform: translateY(0);
+}
+
+/*FIN DES STYLES PAGE CONTACT */
+
+/* FOOTER */
+.site-footer {
+    text-align: center;
+    padding: 15px;
+    background: #222;
+    color: white;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - Jubilée Prestige Food</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <h1>Jubilée Prestige Food</h1>
+        <p>Des mets africains & une patisserie hors du commun</p>
+    </header>
+
+
+    <main class="page-contact">
+
+        <div class="contact-intro">
+            <h2>Contactez-nous</h2>
+            <p>Une commande, une question, un événement à organiser ? On est là.</p>
+        </div>
+
+        <div class="contact-wrapper">
+
+            <!-- Bloc infos pratiques -->
+            <div class="infos-bloc">
+
+                <div class="info-carte">
+                    <div class="info-icone">📞</div>
+                    <div class="info-texte">
+                        <h3>Téléphone</h3>
+                        <p>01 69 69 07 04</p>
+                    </div>
+                </div>
+
+                <div class="info-carte">
+                    <div class="info-icone">📍</div>
+                    <div class="info-texte">
+                        <h3>Adresse</h3>
+                        <p>Cotonou, Bénin</p>
+                    </div>
+                </div>
+
+                <div class="info-carte">
+                    <div class="info-icone">🕐</div>
+                    <div class="info-texte">
+                        <h3>Horaires</h3>
+                        <p>Lun – Sam : 08h à 21h</p>
+                        <p>Dimanche : 10h à 18h</p>
+                    </div>
+                </div>
+
+                <div class="info-carte">
+                    <div class="info-icone">✉️</div>
+                    <div class="info-texte">
+                        <h3>Email</h3>
+                        <p>jubilee.prestige@gmail.com</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Formulaire de contact -->
+            <div class="formulaire-bloc">
+                <h3>Envoyez-nous un message</h3>
+
+                <div class="champ">
+                    <label for="nom">Votre nom</label>
+                    <input type="text" id="nom" name="nom" placeholder="Ex : Karl BOYISSOU">
+                </div>
+
+                <div class="champ">
+                    <label for="telephone">Téléphone</label>
+                    <input type="tel" id="telephone" name="telephone" placeholder="Ex : 97 00 00 00">
+                </div>
+
+                <div class="champ">
+                    <label for="sujet">Sujet</label>
+                    <select id="sujet" name="sujet">
+                        <option value="">-- Choisissez --</option>
+                        <option value="commande">Passer une commande</option>
+                        <option value="evenement">Organiser un événement</option>
+                        <option value="info">Demande d'informations</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+
+                <div class="champ">
+                    <label for="message">Votre message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Décrivez votre demande..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-envoyer">Envoyer le message</button>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>Contact : 01 69 69 07 04</p>
+    </footer>
+
+</body>
+</html>
